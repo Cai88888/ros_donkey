@@ -1,0 +1,8 @@
+prefix=/home/labory/catkin_ws/devel
+
+Name: multi_robot_traj_planner
+Description: Description of multi_robot_traj_planner
+Version: 0.0.1
+Cflags: -I/home/labory/catkin_ws/devel/include -I/home/labory/catkin_ws/src/multi_robot_traj_planner/multi_robot_traj_planner/include
+Libs: -L${prefix}/lib 
+Requires: roscpp roslib message_runtime

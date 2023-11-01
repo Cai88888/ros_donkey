@@ -1,0 +1,19 @@
+<launch>
+  <node ns="car0" name="rplidarNode"          pkg="rplidar_ros"  type="rplidarNode" output="screen">
+  <param name="serial_port"         type="string" value="/dev/ttyUSB0"/>
+  <param name="serial_baudrate"     type="int"    value="115200"/>
+  <param name="frame_id"            type="string" value="car0/laser"/>
+  <param name="inverted"            type="bool"   value="false"/>
+  <param name="angle_compensate"    type="bool"   value="true"/>
+  </node>
+
+  <node ns="car0" name="rplidar2basefootprint" pkg="tf2_ros" type="static_transform_publisher" args="0 0 0 0 0 0 /car0/base_footprint /car0/laser"/>
+  <node ns="car0" name="baselink2basefootprint" pkg="tf2_ros" type="static_transform_publisher" args="0 0 0 0 0 0 /car0/base_footprint /car0/base_link"/>
+
+  <node ns="car0" pkg="map_server" type="map_server" name="map_server" output="screen" args="/home/ubuntu/map/floor2.yaml"/>
+
+  <include file="$(find rf2o_laser_odometry)/launch/rf2o_laser_odometry.launch" />
+
+<!-- <include file="$(find rplidar_ros)/launch/amcl.launch" /> -->
+
+</launch>

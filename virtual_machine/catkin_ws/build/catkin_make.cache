@@ -1,0 +1,2 @@
+multi_robot_traj_planner/multi_robot_traj_planner
+-DCATKIN_DEVEL_PREFIX=/home/labory/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/labory/catkin_ws/install -G Unix Makefiles

@@ -1,0 +1,8 @@
+prefix=/home/labory/catkin_ws/devel
+
+Name: ecbs
+Description: Description of ecbs
+Version: 0.0.1
+Cflags: -I/home/labory/catkin_ws/src/multi_robot_traj_planner/multi_robot_traj_planner/third_party/ecbs/include
+Libs: -L${prefix}/lib 
+Requires: rospy std_msgs sensor_msgs
